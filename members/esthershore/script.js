@@ -17,8 +17,8 @@ function typeWriter() {
     }
 }
 
-function makeButtons(num) {
-    for (let i = 1; i <= num; i++) {
+function makeButtons(n) {
+    for (let i = 1; i <= n; i++) {
         let bubble = document.createElement("button");
         bubble.textContent = "pop";
         bubble.setAttribute("class", "bubble-button");
@@ -29,19 +29,20 @@ function makeButtons(num) {
     }
 }
 
+const TOTAL_BUBBLES = 88;
 let nums = [];
-for (let n = 1; n <= 88; n++) {
+for (let n = 1; n <= TOTAL_BUBBLES; n++) {
     nums.push(n);
 }
 
 let popCount = 0;
 function pop(i) {
     nums = nums.filter(num => num != i);
-    if (popCount < 88) {
+    if (popCount < TOTAL_BUBBLES) {
         popCount++;
         document.getElementById("counter").innerHTML = "pops: " + popCount;
     }
-    if (popCount == 88) {
+    if (popCount == TOTAL_BUBBLES) {
         document.getElementById("info").innerHTML = "Congrats, you popped all the bubbles!"
     }
     let popped = document.getElementById("bubble-button" + i);
@@ -52,7 +53,7 @@ function pop(i) {
 
 
 function randomPop() {
-    if (popCount < 88) {
+    if (popCount < TOTAL_BUBBLES) {
         let bubbleNum = nums[Math.floor(Math.random()*nums.length)];
         pop(bubbleNum);
         nums = nums.filter(num => num != bubbleNum);
@@ -60,14 +61,13 @@ function randomPop() {
 }
 
 window.addEventListener("load", () => {
-    makeButtons(88);
+    makeButtons(TOTAL_BUBBLES);
 });
 
 window.addEventListener("keypress", (event) => {
     if(event.key == "Enter"){
         document.getElementById("refresh-button").click();
-    }
-    else if(event.key == ' '){
-        document.getElementById("toggle").click();
+    } else if(event.key == ' '){
+        randomPop();
     }
 });
