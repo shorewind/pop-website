@@ -1,0 +1,72 @@
+* {
+    font-family: "Source Code Pro", monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #E7F6F2;
+    background: #1C2121;
+}
+
+button {
+    cursor: pointer;
+    margin: 0.15vh;
+    border: 0;
+}
+
+.footer {
+    bottom: 1vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+#acm-button {
+    width: 14vh;
+    height: 4vh;
+    margin: 1vh;
+    border-radius: 10px;
+    background: #A5C9CA;
+}
+
+#acm-button:hover {
+    background: #AFD5D6;
+}
+
+#acm-button:active {
+    opacity: 75%;
+}
+
+#bubble-container {
+    width: 45vh;
+    text-align: center;
+}
+
+.bubble-button {
+    font-size: 1.5vh;
+    border-radius: 0.4vh;
+    width: 5vh;
+    height: 3vh;
+    background: #395B64;
+    color: #395B64;
+    user-select: none;
+}
+
+.bubble-button:hover {
+    background: #426974;
+    color: #426974;
+}
+
+#controls, #counter {
+    text-align: center;
+}
+
+#github {
+    height: 5vh;
+    padding: 2vh;
+    cursor: pointer;
+}
